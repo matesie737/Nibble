@@ -1,0 +1,17 @@
+all: compile link run clean
+
+create: compile link
+
+test: compile link run
+
+compile:
+	g++ -c src/*.cpp
+
+link:
+	g++ *.o -o main -lsfml-graphics -lsfml-window -lsfml-system
+
+clean:
+	del *.o
+
+run:
+	main.exe
